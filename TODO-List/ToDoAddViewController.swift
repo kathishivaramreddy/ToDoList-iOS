@@ -27,7 +27,8 @@ class ToDoAddViewController: UIViewController {
             newToDo.name = name
         }
         newToDo.important = switchImportance.isOn
-        
+        todoTableVC?.toDos.append(newToDo)
+        todoTableVC?.tableView.reloadData()
     }
     
     
