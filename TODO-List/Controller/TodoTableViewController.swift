@@ -42,7 +42,7 @@ class TodoTableViewController: UITableViewController {
         }
         if let showDetailsVC = segue.destination as? showToDoDetailsViewController {
             if let toDo = (sender as? ToDoList) {
-//                showDetailsVC.toDo = toDo
+                showDetailsVC.toDo = toDo
                 showDetailsVC.todoTableVC = self
             }
         }

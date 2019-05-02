@@ -10,26 +10,33 @@ import UIKit
 
 class showToDoDetailsViewController: UIViewController {
 
-//    var toDo = ToDo()
+    var toDo :ToDoList?
     var todoTableVC: TodoTableViewController?
     
     @IBOutlet weak var showToDo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        title = toDo.name
-//        showToDo.text = toDo.name
-//        showToDo.textColor = #colorLiteral(red: 0.1700106263, green: 0.72013098, blue: 0.7984477282, alpha: 1)
+        if let toDo = toDo {
+            title = toDo.name
+            if toDo.important {
+                showToDo.text = "❗️" + toDo.name!
+            }else {
+                showToDo.text = toDo.name
+            }
+        }
+        showToDo.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
     }
     
-    @IBAction func completeToDO(_ sender: UIButton) {
-//        if let toDos = todoTableVC?.toDos.filter({$0 !== toDo}) {
-//            todoTableVC?.toDos = toDos
-//            todoTableVC?.tableView.reloadData()
-//            navigationController?.popViewController(animated: true)
+    @IBAction func completeToDo(_ sender: UIButton) {
         
-//        }
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let toDoObject = toDo  {
+                context.delete(toDoObject)
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                todoTableVC?.tableView.reloadData()
+                navigationController?.popViewController(animated: true)
+            }
+        }
     }
-    
-
 }
