@@ -29,6 +29,7 @@ class ToDoAddViewController: UIViewController {
             }
             newToDo.important = switchImportance.isOn
         }
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         
         navigationController?.popViewController(animated: true)
     }
