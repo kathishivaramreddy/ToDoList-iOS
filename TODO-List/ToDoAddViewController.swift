@@ -29,6 +29,7 @@ class ToDoAddViewController: UIViewController {
         newToDo.important = switchImportance.isOn
         todoTableVC?.toDos.append(newToDo)
         todoTableVC?.tableView.reloadData()
+        navigationController?.popViewController(animated: true)
     }
     
     
