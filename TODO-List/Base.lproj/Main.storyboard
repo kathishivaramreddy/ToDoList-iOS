@@ -131,37 +131,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WHz-Ys-zoq">
-                                <rect key="frame" x="20" y="140" width="374" height="105"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-sw-IJQ">
                                 <rect key="frame" x="113" y="277" width="188" height="63"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="43"/>
                                 <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeToDO:" destination="058-aO-fOH" eventType="touchUpInside" id="Pob-kW-zZv"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdG-tW-eEz">
+                                <rect key="frame" x="20" y="155" width="374" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="top" secondItem="WHz-Ys-zoq" secondAttribute="bottom" constant="32" id="5ZF-Ug-pqu"/>
-                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="leading" secondItem="tb8-uW-cgt" secondAttribute="leading" constant="113" id="9wd-vo-OoF"/>
-                            <constraint firstItem="WHz-Ys-zoq" firstAttribute="centerX" secondItem="iYY-H9-EpG" secondAttribute="centerX" id="B4l-Zp-J3N"/>
-                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="centerX" secondItem="iYY-H9-EpG" secondAttribute="centerX" id="NDw-NX-sww"/>
-                            <constraint firstItem="WHz-Ys-zoq" firstAttribute="top" secondItem="tb8-uW-cgt" secondAttribute="top" constant="76" id="TIx-zZ-hSv"/>
-                            <constraint firstItem="tb8-uW-cgt" firstAttribute="trailing" secondItem="Jsx-sw-IJQ" secondAttribute="trailing" constant="113" id="btt-9F-PZk"/>
-                            <constraint firstItem="tb8-uW-cgt" firstAttribute="bottom" secondItem="Jsx-sw-IJQ" secondAttribute="bottom" constant="352" id="dFe-2d-oLq"/>
-                            <constraint firstItem="WHz-Ys-zoq" firstAttribute="leading" secondItem="tb8-uW-cgt" secondAttribute="leading" constant="20" id="gGT-Em-EIq"/>
-                            <constraint firstItem="tb8-uW-cgt" firstAttribute="trailing" secondItem="WHz-Ys-zoq" secondAttribute="trailing" constant="20" id="stJ-Ci-pES"/>
+                            <constraint firstItem="tb8-uW-cgt" firstAttribute="trailing" secondItem="kdG-tW-eEz" secondAttribute="trailing" constant="20" id="5Xh-xE-eat"/>
+                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="leading" secondItem="tb8-uW-cgt" secondAttribute="leading" constant="113" id="AzC-hl-AMe"/>
+                            <constraint firstItem="kdG-tW-eEz" firstAttribute="leading" secondItem="tb8-uW-cgt" secondAttribute="leading" constant="20" id="DHH-Qx-zqO"/>
+                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="top" secondItem="kdG-tW-eEz" secondAttribute="bottom" constant="81" id="Dao-fh-ViU"/>
+                            <constraint firstItem="tb8-uW-cgt" firstAttribute="trailing" secondItem="Jsx-sw-IJQ" secondAttribute="trailing" constant="113" id="FrL-Pp-O2b"/>
+                            <constraint firstItem="Jsx-sw-IJQ" firstAttribute="centerX" secondItem="iYY-H9-EpG" secondAttribute="centerX" id="aul-te-CDc"/>
+                            <constraint firstItem="kdG-tW-eEz" firstAttribute="top" secondItem="tb8-uW-cgt" secondAttribute="top" constant="91" id="bKX-6w-k3d"/>
+                            <constraint firstItem="kdG-tW-eEz" firstAttribute="centerX" secondItem="iYY-H9-EpG" secondAttribute="centerX" id="j2S-a5-pYk"/>
+                            <constraint firstItem="tb8-uW-cgt" firstAttribute="bottom" secondItem="Jsx-sw-IJQ" secondAttribute="bottom" constant="352" id="vwq-r8-89e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tb8-uW-cgt"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="showToDo" destination="WHz-Ys-zoq" id="YJT-L3-dpa"/>
+                        <outlet property="showToDo" destination="kdG-tW-eEz" id="8Cs-Ry-B4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rW-j5-AE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
