@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="753" y="82"/>
         </scene>
-        <!--View Controller-->
+        <!--To Do Add View Controller-->
         <scene sceneID="kiS-lF-pX8">
             <objects>
-                <viewController id="WOz-In-Itc" sceneMemberID="viewController">
+                <viewController id="WOz-In-Itc" customClass="ToDoAddViewController" customModule="TODO_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F9z-JM-yNy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +65,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="toDoItem:" destination="0D3-Ae-ufd" eventType="editingDidEnd" id="xUu-0N-pPR"/>
+                                </connections>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-lb-DlT">
                                 <rect key="frame" x="182.66666666666666" y="268" width="51" height="31"/>
@@ -79,6 +82,9 @@
                                 <rect key="frame" x="177" y="356" width="60" height="50"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addToDoItem:" destination="WOz-In-Itc" eventType="touchUpInside" id="hxf-zW-1ke"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,10 +110,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k4A-5N-4or"/>
                     </view>
+                    <connections>
+                        <outlet property="switchImportance" destination="FhU-lb-DlT" id="3He-RR-qj2"/>
+                        <outlet property="todoTextField" destination="6yv-1N-UI7" id="0U1-YQ-WKl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URv-ox-4Ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0D3-Ae-ufd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1536.2318840579712" y="78.260869565217391"/>
+            <point key="canvasLocation" x="1406" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jl1-BG-0Pa">

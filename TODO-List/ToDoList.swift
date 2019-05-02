@@ -11,10 +11,7 @@ import Foundation
 
 class ToDo {
     
-    var name:String
+    var name:String = ""
     var important = false
-    
-    init(todo:String) {
-        name = todo
-    }
+        
 }
